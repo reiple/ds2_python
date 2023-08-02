@@ -132,6 +132,16 @@ b = 2
 text = **f**"{a}는 {b}보다 작다." # 출력: 1는 2보다 작다.
 ```
 
+```python
+# ML 실습 Chapter 4.ipynb
+BASE_DIR = 'https://gitlab.com/machine-learning-course1/ml-practice-samsung-2023-summer/-/raw/master/Notebooks'
+...
+...
+pd.options.display.max_columns = None  # To show all columns
+df = pd.read_csv(f'{BASE_DIR}/Data/Hitters.csv') # BASE_DIR 입력됨
+df.head(3)
+```
+
 ---
 
 ## 문자열 앞의 r
