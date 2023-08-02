@@ -30,7 +30,11 @@
 - 데이터에 들어간 값들을 이용하여 다항식 행렬을 만들어 준다.
 
 $$
-np.vander([X_1, X_2], n) = \begin{bmatrix} X_1^n & X_1^{n-1} & … & X_1^2 & X_1^1 & 1\\ X_2^n & X_2^{n-1} & … & X_2^2 & X_2^1 & 1 \end{bmatrix}
+np.vander([X_1, X_2], n) = 
+\begin{bmatrix} 
+    X_1^n & X_1^{n-1} & … & X_1^2 & X_1^1 & 1\\ 
+    X_2^n & X_2^{n-1} & … & X_2^2 & X_2^1 & 1 
+\end{bmatrix}
 $$
 
 ```python
