@@ -9,6 +9,7 @@
     - [https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png](https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png)에서 Marker, Colors, Lines에 무엇을 쓸 수 있는지 나와 있으므로 그래프 그릴 때 참고
         
         ```python
+        # ML 실습 Chapter 2.ipynb
         plt.figure()
         plt.plot(x_ideal, y_ideal, label='distribution')
         plt.plot(x, y, 'k.', label='sampled with noise') # 검은색 점들로 그린다.
@@ -16,6 +17,7 @@
         ```
         
         ```python
+        # ML 실습 Chapter 2.ipynb
         plt.plot(x, y_pred, 'k-') # 검은색이면서 라인을 그린다.
         ```
         
@@ -31,9 +33,10 @@ $$
 np.vander([X_1, X_2], n) = \begin{bmatrix} X_1^n & X_1^{n-1} & … & X_1^2 & X_1^1 & 1\\ X_2^n & X_2^{n-1} & … & X_2^2 & X_2^1 & 1 \end{bmatrix}
 $$
 
-```python
-model.fit(**np.vander(x, degree + 1)**, y)
-```
+    ```python
+    # ML 실습 Chapter 2.ipynb
+    model.fit(**np.vander(x, degree + 1)**, y)
+    ```
 
 ---
 
@@ -48,6 +51,7 @@ model.fit(**np.vander(x, degree + 1)**, y)
 - v는 배열에 있는 값
 
 ```python
+# ML 실습 Chapter 3.ipynb
 Z = np.zeros((B0.size, B1.size))
 
 # Calculate Z-values (RSS) based on grid of coefficients
@@ -56,6 +60,7 @@ for (i, j), v in np.ndenumerate(Z):
 ```
 
 ```python
+# 간단한 예제
 >>> Z = np.zeros((3, 4))
 >>> for (i, j), v in np.ndenumerate(Z):
 ...     print("index:", i, j, ", value:", v)
@@ -83,6 +88,7 @@ index: 2 3 , value: 0.0
 - .fit() 함수의 X_train은 항상 2차원 배열이어야 하기 때문에?
 
 ```python
+# ML 실습 Chapter 4.ipynb
 X_train = **df[['balance']] # ['balance']가 아니라 [['balance']]**
 y_train = df['default']
 
@@ -98,11 +104,13 @@ clf.fit(X_train, y_train)
 - 아래 코드에서 labels와 handles에서 하나씩 꺼내서 튜플로 만든다.
 
 ```python
+# ML 실습 Chapter 2.ipynb
 handles, labels = plt.gca().get_legend_handles_labels()
 by_label = dict(zip(labels, handles))
 ```
 
 ```python
+# zip에 대한 간단한 예
 numbers = (1, 2, 3)
 letters = ("A", "B", "C")
 pairs = list(zip(numbers, letters)) # 결과: [(1, 'A'), (2, 'B'), (3, 'C')]
@@ -129,6 +137,7 @@ text = **f**"{a}는 {b}보다 작다." # 출력: 1는 2보다 작다.
 - 정규 표현식(Regex)이나 Latex 표현식을 사용할 때 주로 쓰는 듯
 
 ```python
+# ML 실습 Chapter 3.ipynb
 # Minimized RSS
 **min_RSS** = r'$\beta_0$, $\beta_1$ for minimized RSS'
 min_rss = np.sum((regr.intercept_ + regr.coef_ * X - Y.values.reshape(-1,1)) ** 2)
@@ -146,6 +155,7 @@ ax2.scatter3D(regr.intercept_, regr.coef_[0], min_rss, c='r', label=**min_RSS**)
 - 함수에서 값을 받는 부분에 변수명을 써야 하는데 무시하고 싶을 때 사용
 
 ```python
+# ML 실습 Chapter 4.ipynb
 # factorize() returns two objects: a label array and an array with the unique values
 df['default'], target_names = df['default'].factorize()
 df['student'], _ = df['student'].factorize()
