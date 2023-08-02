@@ -33,10 +33,10 @@ $$
 np.vander([X_1, X_2], n) = \begin{bmatrix} X_1^n & X_1^{n-1} & … & X_1^2 & X_1^1 & 1\\ X_2^n & X_2^{n-1} & … & X_2^2 & X_2^1 & 1 \end{bmatrix}
 $$
 
-    ```python
-    # ML 실습 Chapter 2.ipynb
-    model.fit(**np.vander(x, degree + 1)**, y)
-    ```
+```python
+# ML 실습 Chapter 2.ipynb
+model.fit(**np.vander(x, degree + 1)**, y)
+```
 
 ---
 
